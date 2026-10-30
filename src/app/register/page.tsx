@@ -7,7 +7,7 @@ import { parseAuthorizeParams, toURLSearchParams } from '@/lib/sso/authorize-par
 import { RegisterFlow } from './register-flow'
 
 export const metadata: Metadata = {
-  title: '注册 - 海创元智研云平台',
+  title: '注册 - 语义引力',
 }
 
 /** 薄组装：解析 searchParams（snake_case 透传参数）→ 有效进注册流程，无效显示错误态。 */

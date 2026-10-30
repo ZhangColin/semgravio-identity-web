@@ -8,7 +8,7 @@ export type VerificationPurpose = 'REGISTER' | 'LOGIN' | 'RESET_PASSWORD'
 
 /**
  * 发码结果（归一化）：后端 `resentAfterSeconds` 在此映射为 `cooldownSeconds`，
- * 后端字段名不泄漏进 UI/类型（见 CONTEXT.md 术语表【冷却】）。
+ * 后端字段名不泄漏进 UI/类型（见 GLOSSARY.md 术语表【冷却】）。
  */
 export interface SendCodeResult {
   /** 验证码有效期秒数。 */

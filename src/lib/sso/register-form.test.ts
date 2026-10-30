@@ -6,7 +6,7 @@ describe('validateRegisterForm', () => {
   it('accepts a valid email + code + matching passwords', () => {
     expect(
       validateRegisterForm({
-        account: 'demo@aieducenter.com',
+        account: 'demo@semgravio.com',
         code: '246810',
         password: 'secret123',
         confirmPassword: 'secret123',
@@ -49,7 +49,7 @@ describe('validateRegisterForm', () => {
 
   it('requires the verification code (必填)', () => {
     const errors = validateRegisterForm({
-      account: 'demo@aieducenter.com',
+      account: 'demo@semgravio.com',
       code: '',
       password: 'secret123',
       confirmPassword: 'secret123',
@@ -60,7 +60,7 @@ describe('validateRegisterForm', () => {
 
   it('does not gate the code on format/length (不做格式门，后端校验为准)', () => {
     const errors = validateRegisterForm({
-      account: 'demo@aieducenter.com',
+      account: 'demo@semgravio.com',
       code: 'any-non-empty',
       password: 'secret123',
       confirmPassword: 'secret123',
@@ -71,7 +71,7 @@ describe('validateRegisterForm', () => {
 
   it('requires a password (必填)', () => {
     const errors = validateRegisterForm({
-      account: 'demo@aieducenter.com',
+      account: 'demo@semgravio.com',
       code: '246810',
       password: '',
       confirmPassword: '',
@@ -82,7 +82,7 @@ describe('validateRegisterForm', () => {
 
   it('requires the confirm password', () => {
     const errors = validateRegisterForm({
-      account: 'demo@aieducenter.com',
+      account: 'demo@semgravio.com',
       code: '246810',
       password: 'secret123',
       confirmPassword: '',
@@ -93,7 +93,7 @@ describe('validateRegisterForm', () => {
 
   it('requires the two passwords to match (两次一致)', () => {
     const errors = validateRegisterForm({
-      account: 'demo@aieducenter.com',
+      account: 'demo@semgravio.com',
       code: '246810',
       password: 'secret123',
       confirmPassword: 'secret456',

@@ -4,9 +4,9 @@ import { errorNotice } from './error-notice'
 
 describe('errorNotice', () => {
   it('guides back to the resolved app when clientName is known', () => {
-    expect(errorNotice('智研笔记')).toEqual({
+    expect(errorNotice('语义笔记')).toEqual({
       title: '出错了',
-      message: '请回到「智研笔记」重新发起登录。',
+      message: '请回到「语义笔记」重新发起登录。',
     })
   })
 

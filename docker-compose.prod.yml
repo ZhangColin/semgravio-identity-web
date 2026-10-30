@@ -1,7 +1,7 @@
 services:
   app:
     build: .
-    container_name: aieducenter-identity-web
+    container_name: semgravio-identity-web
     restart: unless-stopped
     ports:
       - "10002:10002"

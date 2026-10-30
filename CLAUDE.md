@@ -1,4 +1,4 @@
-# aieducenter-identity-web
+# semgravio-identity-web
 
 前端项目，基于 Next.js。
 
@@ -34,11 +34,11 @@ Five canonical roles, label string equal to each role name. See `docs/agents/tri
 
 ### Domain docs
 
-Single-context: one `CONTEXT.md` + `docs/adr/` at the repo root. See `docs/agents/domain.md`.
+Single-context: one `GLOSSARY.md` + `docs/adr/` at the repo root. See `docs/agents/domain.md`.
 
 
 ## 平台架构上下文
-本应用（identity-web）是统一登录前端（应用层·平台自带应用），身份服务的唯一 UI（login.company.com）：登录 / 注册 / 社交登录 / MFA / 登出。完整架构与决策在兄弟仓库 ../aieducenter-architecture/（起步包 docs/starters/identity-web.md）。
+本应用（identity-web）是统一登录前端（应用层·平台自带应用），身份服务的唯一 UI（login.company.com）：登录 / 注册 / 社交登录 / MFA / 登出。完整架构与决策在兄弟仓库 ../semgravio-architecture/（起步包 docs/starters/identity-web.md）。
 
 稳定不变式（务必遵守）：
 - 只服务 Account 域的 SSO；Operator 不走这（operator 在统一后台本地登录）。
@@ -48,4 +48,4 @@ Single-context: one `CONTEXT.md` + `docs/adr/` at the repo root. See `docs/agent
 - 不做账号管理 / 资料编辑（那是各应用或统一后台）——只做登录闭环 + BFF 换 token。
 
 深度（统一登录架构、前后端分离部署、SSO 时序）：读架构仓库 architecture.md §6.1 ⑥⑦、integration-flows.md §1、map.md（对接文档要求）。
-本项目自己的设计演进 → 本项目的 CONTEXT.md + docs/adr/。
+本项目自己的设计演进 → 本项目的 GLOSSARY.md + docs/adr/。

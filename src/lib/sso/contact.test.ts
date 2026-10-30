@@ -4,7 +4,7 @@ import { parseContact } from './contact'
 
 describe('parseContact', () => {
   it('classifies a valid email', () => {
-    expect(parseContact('demo@aieducenter.com')).toEqual({ type: 'email', value: 'demo@aieducenter.com' })
+    expect(parseContact('demo@semgravio.com')).toEqual({ type: 'email', value: 'demo@semgravio.com' })
     expect(parseContact('a@b.co')).toEqual({ type: 'email', value: 'a@b.co' })
     expect(parseContact('user.name+tag@sub.domain.org')).toEqual({
       type: 'email',
@@ -18,7 +18,7 @@ describe('parseContact', () => {
   })
 
   it('trims surrounding whitespace', () => {
-    expect(parseContact('  demo@aieducenter.com  ')).toEqual({ type: 'email', value: 'demo@aieducenter.com' })
+    expect(parseContact('  demo@semgravio.com  ')).toEqual({ type: 'email', value: 'demo@semgravio.com' })
   })
 
   it('returns null for blank input', () => {

@@ -8,8 +8,8 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export const metadata: Metadata = {
-  title: '海创元智研云平台',
-  description: '面向教育与企业的统一 AI 智研入口',
+  title: '语义引力',
+  description: '面向企业与开发者的统一身份认证入口',
 }
 
 export default function RootLayout({

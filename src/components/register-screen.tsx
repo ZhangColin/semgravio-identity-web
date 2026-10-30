@@ -115,7 +115,7 @@ export function RegisterScreen({
       {/* 移动端品牌（小屏时左侧品牌区收起） */}
       <div className="mb-8 flex items-center gap-2 lg:hidden">
         <Network className="size-8 text-primary" aria-hidden />
-        <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100">海创元智研</h2>
+        <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100">语义引力</h2>
       </div>
 
       <div className="mb-8">
@@ -150,7 +150,7 @@ export function RegisterScreen({
             value={account}
             onChange={(e) => {
               setAccount(e.target.value)
-              // 联络方式变更换桶：重置发码冷却（见 CONTEXT.md 术语表【冷却】）
+              // 联络方式变更换桶：重置发码冷却（见 GLOSSARY.md 术语表【冷却】）
               sendCode.reset()
               clearFieldError('account')
             }}

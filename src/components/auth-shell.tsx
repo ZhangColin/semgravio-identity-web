@@ -18,7 +18,7 @@ export function AuthShell({ children }: { children: ReactNode }) {
                   <Network className="size-6" aria-hidden />
                 </div>
                 <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
-                  海创元智研云平台
+                  语义引力
                 </h1>
               </div>
               <div className="space-y-6">
@@ -27,7 +27,7 @@ export function AuthShell({ children }: { children: ReactNode }) {
                   <span className="text-primary">驱动科研创新</span>
                 </h2>
                 <p className="max-w-md text-lg text-slate-600 dark:text-slate-400">
-                  面向教育与企业的统一 AI 智研入口，集成先进算法与海量算力，助力您的研究更进一步。
+                  面向企业与开发者的统一身份认证入口，一次登录，安全直达所有应用。
                 </p>
               </div>
             </div>
@@ -73,7 +73,7 @@ export function AuthShell({ children }: { children: ReactNode }) {
           </a>
         </div>
         <p className="text-xs text-slate-400 dark:text-slate-500">
-          © 2026 海创元 (Hai Chuang Yuan). All rights reserved. 京ICP备XXXXXXXX号
+          © 2026 语义引力 (Semgravio). All rights reserved. 京ICP备XXXXXXXX号
         </p>
       </footer>
     </div>

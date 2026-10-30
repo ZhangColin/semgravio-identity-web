@@ -6,7 +6,7 @@ import { toURLSearchParams } from '@/lib/sso/authorize-params'
 import { ErrorFlow } from './error-flow'
 
 export const metadata: Metadata = {
-  title: '出错了 - 海创元智研云平台',
+  title: '出错了 - 语义引力',
 }
 
 /**

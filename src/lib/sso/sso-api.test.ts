@@ -21,7 +21,7 @@ describe('login', () => {
     )
     vi.stubGlobal('fetch', fetchMock)
 
-    const result = await login({ ...authorizeParams, account: 'demo@aieducenter.com', password: 'demo12345' })
+    const result = await login({ ...authorizeParams, account: 'demo@semgravio.com', password: 'demo12345' })
 
     expect(result).toEqual({ redirectUrl: 'http://demo.localhost:3000/callback?code=abc&state=abc' })
 
@@ -35,7 +35,7 @@ describe('login', () => {
       state: 'abc',
       nonce: 'xyz',
       scope: 'openid profile',
-      account: 'demo@aieducenter.com',
+      account: 'demo@semgravio.com',
       password: 'demo12345',
     })
   })
@@ -153,7 +153,7 @@ describe('loginByCode', () => {
     )
     vi.stubGlobal('fetch', fetchMock)
 
-    const result = await loginByCode({ ...authorizeParams, account: 'demo@aieducenter.com', code: '246810' })
+    const result = await loginByCode({ ...authorizeParams, account: 'demo@semgravio.com', code: '246810' })
 
     expect(result).toEqual({ redirectUrl: 'http://demo.localhost:3000/callback?code=abc&state=abc' })
 
@@ -168,7 +168,7 @@ describe('loginByCode', () => {
       state: 'abc',
       nonce: 'xyz',
       scope: 'openid profile',
-      account: 'demo@aieducenter.com',
+      account: 'demo@semgravio.com',
       code: '246810',
     })
   })
@@ -230,10 +230,10 @@ describe('loginByCode', () => {
       vi.fn().mockResolvedValueOnce(wrongCodeResponse).mockResolvedValueOnce(unknownAccountResponse),
     )
 
-    const wrongCode = await loginByCode({ ...authorizeParams, account: 'real@aieducenter.com', code: '000000' }).catch(
+    const wrongCode = await loginByCode({ ...authorizeParams, account: 'real@semgravio.com', code: '000000' }).catch(
       (e: unknown) => e,
     )
-    const unknownAccount = await loginByCode({ ...authorizeParams, account: 'ghost@aieducenter.com', code: '246810' }).catch(
+    const unknownAccount = await loginByCode({ ...authorizeParams, account: 'ghost@semgravio.com', code: '246810' }).catch(
       (e: unknown) => e,
     )
 
@@ -343,7 +343,7 @@ describe('register', () => {
 
     const result = await register({
       ...authorizeParams,
-      contact: 'new@aieducenter.com',
+      contact: 'new@semgravio.com',
       code: '246810',
       password: 'secret123',
     })
@@ -360,7 +360,7 @@ describe('register', () => {
       state: 'abc',
       nonce: 'xyz',
       scope: 'openid profile',
-      email: 'new@aieducenter.com',
+      email: 'new@semgravio.com',
       emailCode: '246810',
       password: 'secret123',
     })
@@ -434,7 +434,7 @@ describe('register', () => {
   })
 
   it('routes ANY 400 domain error to the code field — known heuristic breadth (body has no business code)', async () => {
-    // 契约陷阱（CONTEXT.md「字段级错误映射」）：注册错误体只带 {code:<httpStatus>, message}，
+    // 契约陷阱（GLOSSARY.md「字段级错误映射」）：注册错误体只带 {code:<httpStatus>, message}，
     // 无业务码字符串，故 400 域错误一律按 httpStatus 归 code。联络方式已由 parseContact 客户端预校验，
     // 现实中的 400 即验码错/过期；但后端若新增其它 400 域错误（如密码强度不足、联络方式格式），
     // 也会被归到 code 字段——已知局限，待后端在响应体暴露业务码后细化。

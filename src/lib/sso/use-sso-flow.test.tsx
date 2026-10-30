@@ -38,7 +38,7 @@ describe('useSsoFlow', () => {
 
     let submitted!: Promise<void>
     act(() => {
-      submitted = result.current.submit({ contact: 'demo@aieducenter.com', password: 'demo12345' })
+      submitted = result.current.submit({ contact: 'demo@semgravio.com', password: 'demo12345' })
     })
     expect(result.current.status).toBe('submitting')
 
@@ -63,7 +63,7 @@ describe('useSsoFlow', () => {
     const { result } = renderHook(() => useSsoFlow(authorizeParams, { navigate }))
 
     await act(async () => {
-      await result.current.submit({ contact: 'demo@aieducenter.com', password: 'wrong' })
+      await result.current.submit({ contact: 'demo@semgravio.com', password: 'wrong' })
     })
 
     expect(result.current.status).toBe('error')
@@ -86,8 +86,8 @@ describe('useSsoFlow', () => {
 
     let first!: Promise<void>
     act(() => {
-      first = result.current.submit({ contact: 'demo@aieducenter.com', password: 'demo12345' })
-      void result.current.submit({ contact: 'demo@aieducenter.com', password: 'demo12345' })
+      first = result.current.submit({ contact: 'demo@semgravio.com', password: 'demo12345' })
+      void result.current.submit({ contact: 'demo@semgravio.com', password: 'demo12345' })
     })
     await act(async () => {
       resolveFetch(Response.json({ redirectUrl: 'http://demo.localhost:3000/callback?code=abc' }))
@@ -109,12 +109,12 @@ describe('useSsoFlow', () => {
     const { result } = renderHook(() => useSsoFlow(authorizeParams, { navigate }))
 
     await act(async () => {
-      await result.current.submit({ contact: 'demo@aieducenter.com', password: 'wrong' })
+      await result.current.submit({ contact: 'demo@semgravio.com', password: 'wrong' })
     })
     expect(result.current.status).toBe('error')
 
     await act(async () => {
-      await result.current.submit({ contact: 'demo@aieducenter.com', password: 'demo12345' })
+      await result.current.submit({ contact: 'demo@semgravio.com', password: 'demo12345' })
     })
 
     expect(result.current.status).toBe('success')
@@ -131,7 +131,7 @@ describe('useSsoFlow', () => {
 
     await act(async () => {
       await result.current.submit({
-        contact: 'new@aieducenter.com',
+        contact: 'new@semgravio.com',
         code: '246810',
         password: 'secret123',
       })
@@ -139,7 +139,7 @@ describe('useSsoFlow', () => {
 
     // code 经值对象接缝透传到注册动作（注册强制当场验码，ADR-0001）
     expect(action).toHaveBeenCalledWith(authorizeParams, {
-      contact: 'new@aieducenter.com',
+      contact: 'new@semgravio.com',
       code: '246810',
       password: 'secret123',
     })
@@ -157,11 +157,11 @@ describe('useSsoFlow', () => {
     const { result } = renderHook(() => useSsoFlow(authorizeParams, { navigate, action }))
 
     await act(async () => {
-      await result.current.submit({ contact: 'demo@aieducenter.com', code: '246810' })
+      await result.current.submit({ contact: 'demo@semgravio.com', code: '246810' })
     })
 
     expect(action).toHaveBeenCalledWith(authorizeParams, {
-      contact: 'demo@aieducenter.com',
+      contact: 'demo@semgravio.com',
       code: '246810',
     })
     expect(result.current.status).toBe('success')

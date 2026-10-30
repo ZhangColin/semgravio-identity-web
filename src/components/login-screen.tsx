@@ -94,13 +94,13 @@ export function LoginScreen({
       {/* 移动端品牌（小屏时左侧品牌区收起） */}
       <div className="mb-8 flex items-center gap-2 lg:hidden">
         <Network className="size-8 text-primary" aria-hidden />
-        <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100">海创元智研</h2>
+        <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100">语义引力</h2>
       </div>
 
       <div className="mb-8">
         <h3 className="mb-2 text-2xl font-bold text-slate-900 dark:text-slate-100">欢迎回来</h3>
         <p className="text-slate-500 dark:text-slate-400">
-          {clientName ? `登录后继续前往 ${clientName}` : '登录后进入您的智研空间'}
+          {clientName ? `登录后继续前往 ${clientName}` : '登录后进入您的语义引力空间'}
         </p>
       </div>
 
@@ -160,7 +160,7 @@ export function LoginScreen({
               value={account}
               onChange={(e) => {
                 setAccount(e.target.value)
-                // 验证码登录：联络方式变更换桶，重置发码冷却（见 CONTEXT.md 术语表【冷却】）
+                // 验证码登录：联络方式变更换桶，重置发码冷却（见 GLOSSARY.md 术语表【冷却】）
                 if (mode === 'code') sendCode.reset()
               }}
               className={fieldInputClass(false)}

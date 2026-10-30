@@ -4,7 +4,7 @@ set -e
 # ========== 配置区 ==========
 SERVER_USER="root"
 SERVER_HOST="43.140.211.9"
-SERVER_PATH="/opt/hcy/aieducenter-identity-web"
+SERVER_PATH="/opt/hcy/semgravio-identity-web"
 SERVER_PASSWORD="Hcy@20260327"
 
 # ========== 逻辑区 ==========

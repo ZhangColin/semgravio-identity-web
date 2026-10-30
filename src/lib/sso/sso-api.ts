@@ -3,11 +3,11 @@ import { parseContact } from './contact'
 
 /**
  * SSO 浏览器闭环端点的前缀（identity 后端 namespace 迁移后的 `/api/sso/*`，#14）。
- * login/register/client-info 与发码/captcha 路径均拼在此前缀下（见 CONTEXT.md「对接契约」）。
+ * login/register/client-info 与发码/captcha 路径均拼在此前缀下（见 GLOSSARY.md「对接契约」）。
  */
 export const SSO_API_PREFIX = '/api/sso'
 
-/** 后端契约形状（identity /api/sso/*，详见本仓 CONTEXT.md「对接契约」）。 */
+/** 后端契约形状（identity /api/sso/*，详见本仓 GLOSSARY.md「对接契约」）。 */
 export interface ClientInfo {
   clientId: string
   clientName: string
